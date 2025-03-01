@@ -1,16 +1,16 @@
 function updateCountdown() {
-  const startDate = new Date("2025-03-01T00:00:00"); // Awal hitungan
-  const endDate = new Date("2025-03-30T23:59:59"); // Akhir hitungan
+  const startDate = new Date("2025-03-01T00:00:00");
+  const endDate = new Date("2025-03-30T23:59:59"); 
   const now = new Date();
   
   if (now > endDate) {
-      document.getElementById('countdown').textContent = "Day 30 - Minggu";
+      document.getElementById('countdown').textContent = "Day 30 - Sunday";
       return;
   }
   
   const timeDiff = now - startDate;
   const dayCount = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-  const daysOfWeek = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+  const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const today = daysOfWeek[now.getDay()];
   
   document.getElementById('countdown').textContent = `Day ${dayCount} - ${today}`;
